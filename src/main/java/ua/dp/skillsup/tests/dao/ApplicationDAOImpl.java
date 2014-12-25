@@ -1,9 +1,9 @@
-package ua.dp.skillsup.tests.dao;
+package main.java.ua.dp.skillsup.tests.dao;
 
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ua.dp.skillsup.tests.dao.entity.TestDescription;
+import main.java.ua.dp.skillsup.tests.dao.entity.TestDescription;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

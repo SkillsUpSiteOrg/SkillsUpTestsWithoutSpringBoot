@@ -1,21 +1,21 @@
-package ua.dp.skillsup.tests.service;
+package main.java.ua.dp.skillsup.tests.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import ua.dp.skillsup.tests.dao.ApplicationDAO;
-import ua.dp.skillsup.tests.dao.entity.TestDescription;
+import main.java.ua.dp.skillsup.tests.dao.ApplicationDAO;
+import main.java.ua.dp.skillsup.tests.dao.entity.TestDescription;
 
 import java.util.List;
 
 /**
  * Created by Daniel on 19.12.2014.
  */
-@Service
+@Service("applicationService")
 public class ApplicationServiceImpl implements ApplicationService {
 
     @Autowired
-    @Qualifier("applicationDao")
+    @Qualifier(value = "applicationDao")
     private ApplicationDAO dao;
 
     public ApplicationDAO getDao() {

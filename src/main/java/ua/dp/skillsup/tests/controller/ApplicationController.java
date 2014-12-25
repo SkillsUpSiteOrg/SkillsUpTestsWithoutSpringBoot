@@ -1,13 +1,14 @@
-package ua.dp.skillsup.tests.controller;
+package main.java.ua.dp.skillsup.tests.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import ua.dp.skillsup.tests.dao.entity.TestDescription;
-import ua.dp.skillsup.tests.service.ApplicationService;
+import main.java.ua.dp.skillsup.tests.dao.entity.TestDescription;
+import main.java.ua.dp.skillsup.tests.service.ApplicationService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ import java.util.List;
 public class ApplicationController {
 
     @Autowired
+    @Qualifier(value = "applicationService")
     private ApplicationService service;
 
     public ApplicationService getService() {
@@ -37,7 +39,7 @@ public class ApplicationController {
     @RequestMapping(value = "/getAllTestDescriptions", method = RequestMethod.GET)
     public @ResponseBody
     List<TestDescription> getAllTestDescriptions() {
-        List<TestDescription> testDescriptions = new ArrayList<>();
+        List<TestDescription> testDescriptions = new ArrayList<TestDescription>();
         testDescriptions.addAll(service.getAllTestDescriptions());
         return testDescriptions;
     }

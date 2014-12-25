@@ -1,11 +1,11 @@
-package ua.dp.skillsup.tests;
+package main.java.ua.dp.skillsup.tests;
 
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ua.dp.skillsup.tests.dao.ApplicationDAO;
-import ua.dp.skillsup.tests.dao.entity.TestDescription;
+import main.java.ua.dp.skillsup.tests.dao.ApplicationDAO;
+import main.java.ua.dp.skillsup.tests.dao.entity.TestDescription;
 
 /**
  * Created by Daniel on 25.12.2014.
@@ -18,7 +18,7 @@ public class ApplicationMain {
 
     public static void main(String[] args){
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("/webapp/WEB-INF/applicationContext.xml");  //*webapp/WEB-INF/applicationContext.xml
+                new ClassPathXmlApplicationContext("classpath:/main/webapp/WEB-INF/applicationContext.xml");  //*webapp/WEB-INF/applicationContext.xml
         ApplicationDAO dao = context.getBean("applicationDao", ApplicationDAO.class);
 
         TestDescription test1 = new TestDescription();

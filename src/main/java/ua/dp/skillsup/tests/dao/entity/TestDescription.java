@@ -1,4 +1,4 @@
-package ua.dp.skillsup.tests.dao.entity;
+package main.java.ua.dp.skillsup.tests.dao.entity;
 
 import org.joda.time.DateTime;
 
