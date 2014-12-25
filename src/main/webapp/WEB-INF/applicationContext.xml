@@ -22,7 +22,7 @@
 
         <property name="persistenceUnitName" value="item-manager-pu"/>
 
-        <property name="persistenceXmlLocation" value="/META-INF/persistence.xml"/>
+        <property name="persistenceXmlLocation" value="classpath:persistence.xml"/>
 
         <property name="jpaDialect" ref="jpaDialect"/>
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
@@ -52,7 +52,7 @@
         <property name="password" value="${db.password}"/>
     </bean>
 
-    <context:property-placeholder location="/META-INF/connection.properties"/>
+    <context:property-placeholder location="classpath:connection.properties"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 

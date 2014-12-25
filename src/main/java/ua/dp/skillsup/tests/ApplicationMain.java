@@ -20,7 +20,7 @@ public class ApplicationMain {
 
     public static void main(String[] args){
         ApplicationContext context =
-                new ClassPathXmlApplicationContext("/webapp/WEB-INF/applicationContext.xml"); //FileSystemXmlApplicationContext("C:/Dan/Education/SkillzUp/Java practice 2/TestsWithoutSpringBoot/Tests/src/main/webapp/WEB-INF/applicationContext.xml");
+                new ClassPathXmlApplicationContext("classpath:applicationContext.xml"); //FileSystemXmlApplicationContext("C:/Dan/Education/SkillzUp/Java practice 2/TestsWithoutSpringBoot/Tests/src/main/webapp/WEB-INF/applicationContext.xml");
         ApplicationDAO dao = context.getBean("applicationDao", ApplicationDAO.class);
 
         TestDescription test1 = new TestDescription();
