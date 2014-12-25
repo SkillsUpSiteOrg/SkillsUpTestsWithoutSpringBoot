@@ -4,7 +4,7 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
  http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
     <persistence-unit name="item-manager-pu" transaction-type="RESOURCE_LOCAL">
-        <class>main.java.ua.dp.skillsup.tests.dao.entity.TestDescription</class>
+        <class>ua.dp.skillsup.tests.dao.entity.TestDescription</class>
     </persistence-unit>
 
 </persistence>

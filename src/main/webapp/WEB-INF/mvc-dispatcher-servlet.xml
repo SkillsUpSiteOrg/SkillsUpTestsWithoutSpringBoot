@@ -8,17 +8,17 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
-	<context:component-scan base-package="main.java.ua.dp.skillsup.tests.controller" />
+	<context:component-scan base-package="ua.dp.skillsup.tests.controller" />
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
 	</bean>
 
-    <bean name="/home.htm"
-          class="main.java.ua.dp.skillsup.tests.controller.ApplicationController">
-        <!--<property name="rantService" ref="rantService" />-->
-    </bean>
+    <!--<bean name="/home.htm"
+          class="ua.dp.skillsup.tests.controller.ApplicationController">
+        &lt;!&ndash;<property name="rantService" ref="rantService" />&ndash;&gt;
+    </bean>-->
 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 

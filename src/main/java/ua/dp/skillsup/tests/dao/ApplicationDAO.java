@@ -1,6 +1,6 @@
-package main.java.ua.dp.skillsup.tests.dao;
+package ua.dp.skillsup.tests.dao;
 
-import main.java.ua.dp.skillsup.tests.dao.entity.TestDescription;
+import ua.dp.skillsup.tests.dao.entity.TestDescription;
 
 import java.util.List;
 

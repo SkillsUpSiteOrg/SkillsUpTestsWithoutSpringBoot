@@ -13,16 +13,16 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <context:component-scan base-package="main.java.ua.dp.skillsup.tests"/>
+    <context:component-scan base-package="ua.dp.skillsup.tests"/>
 
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 
-        <property name="packagesToScan" value="main.java.ua.dp.skillsup.tests.dao.entity"/>
+        <property name="packagesToScan" value="ua.dp.skillsup.tests.dao.entity"/>
 
         <property name="persistenceUnitName" value="item-manager-pu"/>
 
-        <property name="persistenceXmlLocation" value="/main/webapp/META-INF/persistence.xml"/>
+        <property name="persistenceXmlLocation" value="/META-INF/persistence.xml"/>
 
         <property name="jpaDialect" ref="jpaDialect"/>
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
@@ -52,7 +52,7 @@
         <property name="password" value="${db.password}"/>
     </bean>
 
-    <context:property-placeholder location="/main/webapp/META-INF/connection.properties"/>
+    <context:property-placeholder location="/META-INF/connection.properties"/>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
@@ -64,6 +64,6 @@
     <context:annotation-config />
 
     <!-- Определяем папки, в которых будем автоматически искать бины-компоненты (@Component, @Service)  -->
-    <context:component-scan base-package="main.java.ua.dp.skillsup.tests.dao" />
-    <context:component-scan base-package="main.java.ua.dp.skillsup.tests.service" />
+    <context:component-scan base-package="ua.dp.skillsup.tests.dao" />
+    <context:component-scan base-package="ua.dp.skillsup.tests.service" />
 </beans>

@@ -1,4 +1,4 @@
-package main.java.ua.dp.skillsup.tests.controller;
+package ua.dp.skillsup.tests.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import main.java.ua.dp.skillsup.tests.dao.entity.TestDescription;
-import main.java.ua.dp.skillsup.tests.service.ApplicationService;
+import ua.dp.skillsup.tests.dao.entity.TestDescription;
+import ua.dp.skillsup.tests.service.ApplicationService;
 
 import java.util.ArrayList;
 import java.util.List;
