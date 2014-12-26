@@ -33,7 +33,7 @@ public class ApplicationController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView getPages() {
-        return new ModelAndView("home");
+        return new ModelAndView("index");
     }
 
     @RequestMapping(value = "/getAllTestDescriptions", method = RequestMethod.GET)
