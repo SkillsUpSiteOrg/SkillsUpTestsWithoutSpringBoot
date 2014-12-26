@@ -29,7 +29,6 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public TestDescription addTestDescription(TestDescription testDescription) {
         return dao.addTestDescription(testDescription);
-        //second line
     }
 
     @Override
