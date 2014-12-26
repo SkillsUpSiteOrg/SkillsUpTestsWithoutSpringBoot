@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ua.dp.skillsup.tests.dao.ApplicationDAO;
+import ua.dp.skillsup.tests.dao.entity.QuestionAnswer;
 import ua.dp.skillsup.tests.dao.entity.TestDescription;
 
 import java.util.List;
@@ -47,7 +48,37 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
+    public long getTestDescriptionIdFromDB(TestDescription testDescription){
+        return dao.getTestDescriptionIdFromDB(testDescription);
+    }
+
+    @Override
     public List<TestDescription> getAllTestDescriptions() {
         return dao.getAllTestDescriptions();
+    }
+
+    @Override
+    public QuestionAnswer addQuestionAnswer(QuestionAnswer questionAnswer) {
+        return dao.addQuestionAnswer(questionAnswer);
+    }
+
+    @Override
+    public void deleteQuestionAnswer(QuestionAnswer questionAnswer) {
+        dao.deleteQuestionAnswer(questionAnswer);
+    }
+
+    @Override
+    public QuestionAnswer getQuestionAnswer(long id) {
+        return dao.getQuestionAnswer(id);
+    }
+
+    @Override
+    public void updateQuestionAnswer(long id, QuestionAnswer questionAnswer) {
+        dao.updateQuestionAnswer(id, questionAnswer);
+    }
+
+    @Override
+    public List<QuestionAnswer> getAllQuestionAnswers() {
+        return dao.getAllQuestionAnswers();
     }
 }
