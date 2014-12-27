@@ -3,6 +3,7 @@ package ua.dp.skillsup.tests.dao.entity;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -11,7 +12,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "TEST_DESCRIPTION")
-public class TestDescription {
+public class TestDescription implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")

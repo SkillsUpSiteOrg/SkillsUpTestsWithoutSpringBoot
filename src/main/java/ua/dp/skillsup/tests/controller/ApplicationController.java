@@ -5,6 +5,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ua.dp.skillsup.tests.dao.entity.TestDescription;
 import ua.dp.skillsup.tests.service.ApplicationService;
 
+import java.awt.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -43,11 +45,13 @@ public class ApplicationController {
         return new ModelAndView("index");
     }
 
-    @RequestMapping(value = "/getAllTestDescriptions", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllTestDescriptions",
+            method = RequestMethod.GET)
     public @ResponseBody
     List<TestDescription> getAllTestDescriptions() {
         List<TestDescription> testDescriptions = new ArrayList<TestDescription>();
         testDescriptions.addAll(service.getAllTestDescriptions());
+        System.out.println(testDescriptions);
         return testDescriptions;
     }
 

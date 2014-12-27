@@ -42,6 +42,7 @@
           <version>2.3</version>
       </dependency>
 
+
       <!--Hibernate dependencies-->
       <!--<dependency>
           <groupId>org.hibernate</groupId>
@@ -59,6 +60,18 @@
           <groupId>org.dbunit</groupId>
           <artifactId>dbunit</artifactId>
           <version>2.5.0</version>
+      </dependency>
+      <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mapper-asl</artifactId>
+          <version>1.8.5</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-core-asl</artifactId>
+          <version>1.8.5</version>
+          <scope>compile</scope>
       </dependency>
       <dependency>
           <groupId>org.slf4j</groupId>
