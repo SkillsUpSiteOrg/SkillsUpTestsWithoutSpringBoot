@@ -1,8 +1,8 @@
 <!doctype html>
-<html class="no-js">
+<html lang="en" ng-app="SkillsUpTests">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>SkillsUp Testing</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="SkillsUpTests">
+  <body ng-controller="TestListController">
 
     <!-- Add your site or application content here -->
     <div class="container">
@@ -28,7 +28,31 @@
         <h3 class="text-muted">SkillsUpTests</h3>
       </div>
 
-      <ng-view></ng-view>
+        <button ng-click="getAllTests()" type="button" class="btn btn-info btn-sm" id="getAllTestsButton">Get all tests</button>
+        <p>All tests:</p>
+        <ul>
+            <li ng-repeat="test in tests">
+                <p>{{test.testName}}</p>
+                <p><!--{{showDate(test.dateOfCreation)}}-->{{test.dateOfCreation | date:'yyyy-MM-dd'}}</p>
+                <p>{{test.maxTimeToPassInMinutes}}</p>
+            </li>
+        </ul>
+
+        <h3>Please, add new test</h3>
+        <p> </p>
+        <label>Enter test's name:</label>
+        <input type="text" placeholder="test's name" id="testNameInput">
+        <p> </p>
+        <label for="testCreationDatePickerDiv">Enter test's date of creation:</label>
+        <div id="testCreationDatePickerDiv" class="input-append date">
+            <input id="testCreationDatePicker" type="date">
+            <span class="add-on"><i class="icon-th"></i></span>
+        </div>
+        <p> </p>
+        <label>Enter tests's maximum time to pass:</label>
+        <input type="text" placeholder="time in minutes" id="testTimeToPassInput">
+        <p> </p>
+        <button ng-click="addNewTest()" type="button" class="btn btn-info btn-sm" id="addNewTestButton">Add new test</button>
 
       <div class="footer">
         <p><span class="glyphicon glyphicon-heart"></span> from the SkillsUP team</p>
@@ -49,10 +73,8 @@
     <script src="bower_components/angular-ui-sortable/sortable.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 
-
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
 
 </body>
 </html>

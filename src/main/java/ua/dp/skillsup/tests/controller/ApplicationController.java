@@ -56,6 +56,7 @@ public class ApplicationController {
             @RequestParam(value = "testName", required = true) String testName,
             @RequestParam(value = "dateOfCreation", required = true) String dateOfCreation,
             @RequestParam(value = "maxTimeToPassInMinutes", required = true) int maxTimeToPassInMinutes) {
+        System.out.println("Controller side: " + testName + ", " + dateOfCreation + ", " + maxTimeToPassInMinutes);
         TestDescription testDescription = new TestDescription();
         testDescription.setTestName(testName);
         testDescription.setMaxTimeToPassInMinutes(maxTimeToPassInMinutes);

@@ -40,6 +40,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.7.4" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.5" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.8.5" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="Tests/web/Web" />
