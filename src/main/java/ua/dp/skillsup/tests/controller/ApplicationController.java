@@ -59,6 +59,6 @@ public class ApplicationController {
         DateTime dateOfCreationFormatted = formatter.parseDateTime(dateOfCreation);
         testDescription.setDateOfCreation(dateOfCreationFormatted);*/
         service.addTestDescription(testDescription);
-        return "Successfully added new test"+testDescription.getTestName();
+        return "{\"some\" : \"Successfully added new test "+testDescription.getTestName()+"\"}";
     }
 }
