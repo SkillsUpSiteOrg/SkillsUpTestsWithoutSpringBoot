@@ -1,6 +1,5 @@
 package ua.dp.skillsup.tests;
 
-import org.joda.time.DateTime;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.dp.skillsup.tests.dao.ApplicationDAO;
@@ -22,7 +21,7 @@ public class ApplicationMain {
 
         TestDescription test1 = new TestDescription();
         test1.setTestName("Java-0");
-        test1.setDateOfCreation(new DateTime(2014, 12, 23, 0, 0));
+        /*test1.setDateOfCreation(new DateTime(2014, 12, 23, 0, 0));*/
         test1.setMaxTimeToPassInMinutes(90);
 
         dao.addTestDescription(test1);

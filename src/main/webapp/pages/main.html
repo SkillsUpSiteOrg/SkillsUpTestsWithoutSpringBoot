@@ -1,41 +1,44 @@
 
 <div class="container">
   <h2>SkillsUpTests</h2>
+   <!-- TestDescriptions input -->
+  <form role="form" class="form-inline"  ng-submit="addNewTest()">
 
-  <!-- Todos input -->
-  <form role="form" ng-submit="addTest()">
-    <div class="row">
-      <div class="input-group">
-        <input type="text" ng-model="test" placeholder="What tests to be?" class="form-control">
-        <span class="input-group-btn">
-          <input type="submit" class="btn btn-primary" value="Add">
-        </span>
-      </div>
-    </div>
+        <input ng-model="testName" type="text" placeholder="What test's name to be?" class="form-control input-xxlarge">
+        <!--<input ng-model="dateOfCreation" type="date"  class="form-control" placeholder="dd-MM-yyyy">-->
+            <!--<span class="add-on"><i class="icon-th"></i></span>-->
+        <input ng-model="maxTimeToPassInMinutes" type="text" placeholder="Minutes.." class="form-control input-mini">
+        <input type="submit" class="btn btn-primary" value="Add">
 
-    <!-- Todos list -->
-    <div ui-sortable ng-model="tests">
+    </form>
+
+      <button class="btn btn-default" ng-click="getAllTests()" aria-label="Get">GetAllTests</button>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th data-field="testDescriptionId" data-align="right">ID</th>
+            <th data-field="dateOfCreation" data-align="center">Date creation</th>
+            <th data-field="testName" data-align="center">Test name</th>
+            <th data-field="maxTimeToPassInMinutes" data-align="left">Minutes todo</th>
+        </tr>
+        </thead>
+        <tbody ui-sortable ng-model="tests"><tr ng-repeat="test in tests" style="padding:5px 10px; cursor: move;">
+            <td>{{test.testDescriptionId}}</td>
+            <td>{{test.dateOfCreation | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+            <td>{{test.testName}}</td>
+            <td>{{test.maxTimeToPassInMinutes}}</td>
+        </tr></tbody>
+    </table>
+
+    <!--<div ui-sortable ng-model="tests">
 	  <p class="input-group" ng-repeat="test in tests" style="padding:5px 10px; cursor: move;">
-		<input type="text" ng-model="test" class="form-control">
+
+          <input type="text" class="form-control">
 		<span class="input-group-btn">
 		  <button class="btn btn-danger" ng-click="removeTest($index)" aria-label="Remove">X</button>
 		</span>
 	  </p>
-	</div>
-  </form>
+	</div>-->
 </div>
 
-<!--div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div-->
