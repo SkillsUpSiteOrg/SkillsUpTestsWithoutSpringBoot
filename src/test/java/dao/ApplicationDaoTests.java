@@ -1,31 +1,19 @@
 package dao;
 
-import org.apache.log4j.Logger;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
-import org.dbunit.dataset.xml.FlatXmlDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
-import org.joda.time.DateTime;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.test.AbstractTransactionalDataSourceSpringContextTests;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ua.dp.skillsup.tests.dao.ApplicationDAO;
 import ua.dp.skillsup.tests.dao.entity.TestDescription;
 
 import javax.sql.DataSource;
-import java.io.FileInputStream;
 import java.sql.Connection;
 import java.util.List;
 
@@ -74,7 +62,7 @@ public class ApplicationDaoTests extends  AbstractTransactionalDataSourceSpringC
 
         TestDescription testDescription3 = new TestDescription();
         testDescription3.setTestName("Java-2");
-        testDescription3.setDateOfCreation(new DateTime(2014, 11, 15, 0, 0));
+       /* testDescription3.setDateOfCreation(new DateTime(2014, 11, 15, 0, 0));*/
         testDescription3.setMaxTimeToPassInMinutes(90);
         dao.addTestDescription(testDescription3);
 

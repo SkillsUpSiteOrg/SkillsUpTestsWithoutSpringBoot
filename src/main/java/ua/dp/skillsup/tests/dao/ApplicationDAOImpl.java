@@ -1,6 +1,5 @@
 package ua.dp.skillsup.tests.dao;
 
-import org.joda.time.DateTime;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ua.dp.skillsup.tests.dao.entity.TestDescription;
@@ -47,9 +46,9 @@ public class ApplicationDAOImpl implements ApplicationDAO {
             //System.out.println("Not null in DAO update");
             newTest = em.find(TestDescription.class, testDescription.getTestDescriptionId());
             newTest.setTestName(testDescription.getTestName());
-            newTest.setDateOfCreation(new DateTime(testDescription.getDateOfCreation().getYear(),
+            /*newTest.setDateOfCreation(new DateTime(testDescription.getDateOfCreation().getYear(),
                     testDescription.getDateOfCreation().getMonth(), testDescription.getDateOfCreation().getDate(),
-                    testDescription.getDateOfCreation().getHours(), testDescription.getDateOfCreation().getMinutes()));
+                    testDescription.getDateOfCreation().getHours(), testDescription.getDateOfCreation().getMinutes()));*/
             newTest.setMaxTimeToPassInMinutes(testDescription.getMaxTimeToPassInMinutes());
             em.merge(newTest);
         }

@@ -21,8 +21,9 @@ public class TestDescription implements Serializable{
     @Column(name = "TEST_NAME")
     private String testName;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "DATE")
-    private Date dateOfCreation;
+    private Date dateOfCreation = new Date();;
 
     @Column(name = "TIME_IN_MINUTES")
     private int maxTimeToPassInMinutes;
@@ -47,9 +48,9 @@ public class TestDescription implements Serializable{
         return dateOfCreation;
     }
 
-    public void setDateOfCreation(DateTime dateOfCreation) {
+   /* public void setDateOfCreation(DateTime dateOfCreation) {
         this.dateOfCreation = dateOfCreation.toDate();
-    }
+    }*/
 
     public int getMaxTimeToPassInMinutes() {
         return maxTimeToPassInMinutes;
