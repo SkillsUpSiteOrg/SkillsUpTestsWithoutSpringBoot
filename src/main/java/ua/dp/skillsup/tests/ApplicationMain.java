@@ -8,8 +8,9 @@ import ua.dp.skillsup.tests.dao.entity.TestDescription;
 /**
  * Created by Daniel on 25.12.2014.
  */
-public class ApplicationMain {
+public final class ApplicationMain {
 
+    private ApplicationMain(){};
 
     public static void main(String[] args){
         ApplicationContext context =

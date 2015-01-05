@@ -23,11 +23,11 @@ import java.util.List;
 //@Ignore
 //@RunWith(SpringJUnit4ClassRunner.class)       //BlockJUnit4ClassRunner
 //@ContextConfiguration(locations = "classpath:applicationContext.xml")
-public class ApplicationDaoTests extends  AbstractTransactionalDataSourceSpringContextTests {
+public class ApplicationDaoTest extends  AbstractTransactionalDataSourceSpringContextTests {
 
     private ApplicationDAO dao;
 
-    public ApplicationDaoTests() {
+    public ApplicationDaoTest() {
         super();
         ApplicationContext ctx = super.getApplicationContext();
         dao = (ApplicationDAO) ctx.getBean("applicationDao");
