@@ -10,9 +10,6 @@ import ua.dp.skillsup.tests.dao.entity.TestDescription;
  */
 public class ApplicationMain {
 
-    /*@Autowired
-    @Qualifier(value = "applicationDao")
-    public static ApplicationDAO dao;*/
 
     public static void main(String[] args){
         ApplicationContext context =
