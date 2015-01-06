@@ -42,3 +42,16 @@ angular
         redirectTo: '/'
       });
   });
+$httpProvider.interceptors.push(function($q) {
+    return {
+        'request': function(request) {
+            request.url = '/SkillsUpTests/' + request.url;
+            return request || $q.when(request);
+        },
+
+        'response': function(response) {
+            response.url = '/SkillsUpTests/' + response.url;
+            return response || $q.when(response);
+        }
+    };
+});

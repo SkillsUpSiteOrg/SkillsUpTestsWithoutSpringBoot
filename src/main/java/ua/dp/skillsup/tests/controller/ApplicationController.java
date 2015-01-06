@@ -32,7 +32,7 @@ public class ApplicationController {
         this.service = service;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/SkillsUpTests", method = RequestMethod.GET)
     public ModelAndView getPages() {
         return new ModelAndView("index");
     }

@@ -170,18 +170,18 @@
       <plugins>
 
       <!-- Eclipse project -->
-          <plugin>
+          <!--<plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-eclipse-plugin</artifactId>
               <version>2.9</version>
               <configuration>
-                  <!-- Always download and attach dependencies source code -->
+                  &lt;!&ndash; Always download and attach dependencies source code &ndash;&gt;
                   <downloadSources>true</downloadSources>
                   <downloadJavadocs>false</downloadJavadocs>
-                  <!-- Avoid type mvn eclipse:eclipse -Dwtpversion=2.0 -->
+                  &lt;!&ndash; Avoid type mvn eclipse:eclipse -Dwtpversion=2.0 &ndash;&gt;
                   <wtpversion>2.0</wtpversion>
               </configuration>
-          </plugin>
+          </plugin>-->
 
           <!-- Set JDK Compiler Level -->
           <plugin>
@@ -200,7 +200,7 @@
               <artifactId>tomcat7-maven-plugin</artifactId>
               <version>2.2</version>
               <configuration>
-                  <path>/</path>
+                  <path>/SkillsUpTests</path>
               </configuration>
           </plugin>
 
