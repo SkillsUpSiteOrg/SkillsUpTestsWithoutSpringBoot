@@ -3,12 +3,13 @@
 */
 
 angular.module('SkillsUpTests')
-  .controller('MainCtrl',function ($scope, localStorageService, $http) {
+  .controller('MainCtrl',function ($scope, localStorageService, $http, $location) {
     var testsInStore = localStorageService.get('tests');
     //$scope.tests = testsInStore || [];
+    var host = $location.absUrl().substr(0, $location.absUrl().lastIndexOf("#"));
 
     $scope.getAllTests = function () {
-        $http.get('/getAllTestDescriptions').success(function(data) {
+        $http.get(host+'getAllTestDescriptions').success(function(data) {
             console.log(data);
             $scope.tests = data;
             localStorageService.set('tests', $scope.tests);
@@ -22,7 +23,7 @@ angular.module('SkillsUpTests')
         console.log($scope.maxTimeToPassInMinutes);
         $http({
             method: 'POST',
-            url: '/addNewTestDescription',
+            url: host+'addNewTestDescription',
             data: $.param({"testName":$scope.testName, "maxTimeToPassInMinutes":$scope.maxTimeToPassInMinutes}),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         })
