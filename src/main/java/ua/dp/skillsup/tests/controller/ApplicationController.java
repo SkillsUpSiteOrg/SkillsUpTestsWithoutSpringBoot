@@ -32,11 +32,6 @@ public class ApplicationController {
         this.service = service;
     }
 
-    @RequestMapping(value = "/SkillsUpTests", method = RequestMethod.GET)
-    public ModelAndView getPages() {
-        return new ModelAndView("index");
-    }
-
     @RequestMapping(value = "/getAllTestDescriptions",
             method = RequestMethod.GET)
     public @ResponseBody
@@ -50,14 +45,10 @@ public class ApplicationController {
     @RequestMapping(value = "/addNewTestDescription", method = RequestMethod.POST)
     public @ResponseBody String addNewTestDescription(
             @RequestParam(value = "testName", required = true) String testName,
-            /*@RequestParam(value = "dateOfCreation", required = true) String dateOfCreation,*/
             @RequestParam(value = "maxTimeToPassInMinutes", required = true) int maxTimeToPassInMinutes) {
         TestDescription testDescription = new TestDescription();
         testDescription.setTestName(testName);
         testDescription.setMaxTimeToPassInMinutes(maxTimeToPassInMinutes);
-        /*DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
-        DateTime dateOfCreationFormatted = formatter.parseDateTime(dateOfCreation);
-        testDescription.setDateOfCreation(dateOfCreationFormatted);*/
         service.addTestDescription(testDescription);
         return "{\"some\" : \"Successfully added new test "+testDescription.getTestName()+"\"}";
     }

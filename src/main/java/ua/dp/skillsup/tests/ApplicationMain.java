@@ -14,12 +14,11 @@ public final class ApplicationMain {
 
     public static void main(String[] args){
         ApplicationContext context =
-                new ClassPathXmlApplicationContext("classpath:applicationContext.xml"); //FileSystemXmlApplicationContext("C:/Dan/Education/SkillzUp/Java practice 2/TestsWithoutSpringBoot/Tests/src/main/webapp/WEB-INF/applicationContext.xml");
+                new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
         ApplicationDAO dao = context.getBean("applicationDao", ApplicationDAO.class);
 
         TestDescription test1 = new TestDescription();
         test1.setTestName("Java-0");
-        /*test1.setDateOfCreation(new DateTime(2014, 12, 23, 0, 0));*/
         test1.setMaxTimeToPassInMinutes(90);
 
         dao.addTestDescription(test1);
